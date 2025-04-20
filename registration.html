@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="contact-form">
+        <img alt="" class="avatar" src="https://i.postimg.cc/zDyt7KCv/a1.jpg">
+        <h2>Login</h2>
+        <form action="index.html" onsubmit="return validateForm()">
+            <p>Username</p><input placeholder="Enter username" type="text" id="username">
+            <p>Password</p><input placeholder="Enter Password" type="password" id="password">
+            <button type="submit" class="btn play_button">Login</button>
+            <p><input type="checkbox" id="remember">Remember Me</p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var remember = document.getElementById('remember').checked;
+
+            if (username.trim() === "") {
+                alert("Please enter your username.");
+                return false;
+            }
+
+            if (password.trim() === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            if (!remember) {
+                alert("Please check the 'Remember Me' box.");
+                return false;
+            }
+
+            // Additional validation can be added here, such as checking the password strength or verifying the username.
+
+            // If all validation passes, you can submit the form, or perform an AJAX request to authenticate the user.
+            return true;
+          }
